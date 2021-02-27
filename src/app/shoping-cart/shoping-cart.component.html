@@ -1,0 +1,20 @@
+<p>
+<a routerLink="/categories/new" class="btn btn-primary">New products</a>
+</p>
+<table class="table">
+<thead>
+    <tr>
+        <th>title</th>
+        <th>price</th>
+        <th>categories</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let x of available$ |async" >
+        <td>{{x.title}}</td>
+        <td>{{x.price}}</td>
+        <td>{{x.categories}}</td>
+        
+    </tr>
+</tbody>
+</table>

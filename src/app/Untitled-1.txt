@@ -1,0 +1,26 @@
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyA0L-j1aPc6XsSqN1fGEzwlzfFXYsrMfmY",
+    authDomain: "yabsira-b8a60.firebaseapp.com",
+    projectId: "yabsira-b8a60",
+    storageBucket: "yabsira-b8a60.appspot.com",
+    messagingSenderId: "756468121518",
+    appId: "1:756468121518:web:32c7e1afbf28bb57d4523f",
+    measurementId: "G-BL0RZV62F5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if
+          request.time < timestamp.date(2021, 3, 18);
+    }
+  }
+}
